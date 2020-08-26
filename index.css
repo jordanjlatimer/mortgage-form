@@ -1,0 +1,156 @@
+html, body{
+  height: 100%;
+  background-color: whitesmoke;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+}
+
+header{
+  display: flex;
+  background-color: #101f30;
+  color: white;
+  height: 100px;
+  justify-content: center;
+}
+
+header h1{
+  display: block;
+  margin: auto 0px;
+  font-size: 48px;
+}
+
+h2{
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 36px;
+  align-self: center;
+}
+
+h3{
+  font-size: 24px;
+}
+
+main{
+  padding: 20px
+}
+
+section:nth-of-type(1){
+  text-align: center;
+  display: block;
+  height: 50px;
+  margin-top: 0px;
+  box-shadow: none;
+}
+
+progress{
+  margin-top: 10px;
+}
+
+section:nth-of-type(2){
+  display: flex;
+  min-height: 300px;
+  width: fit-content;
+}
+
+section{
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .5);
+  margin: 30px auto 0px auto;
+}
+
+main section div div div{
+  width: 50%;
+  background-color: green;
+  float: left;
+  margin: 0px;
+}
+
+main section div div{
+  background-color: #101f30;
+  height: 20px;
+  margin: 20px auto;
+  width: 200px;
+}
+
+#product button{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px 20px;
+  align-self: flex-start;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, .5);
+  transition: all 300ms;
+  padding: 20px;
+  width: 160px;
+  height: 150px;
+}
+
+button:hover{
+  background-color: rgb(206, 248, 206);
+}
+
+button h3{
+  margin-top: 10px;
+  text-align: center;
+}
+
+path{
+  fill: #101f30;
+}
+
+
+
+
+
+
+
+
+
+
+
+input[type=range]{
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  border: 2px solid black;
+  margin-top: -5px;
+  height: 20px;
+  width: 20px;
+  border-radius: 3px;
+  background: #101f30;
+}
+
+input[type=range]::-webkit-slider-runnable-track{
+  height: 10px;
+  background: pink;
+  border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb{
+  -webkit-appearance: none;
+  border: 2px solid black;
+  margin-top: -5px;
+  height: 20px;
+  width: 20px;
+  border-radius: 3px;
+  background: #101f30;
+}
+
+input[type=range]::-moz-range-track{
+  height: 10px;
+  background: pink;
+  border-radius: 3px;
+}
+

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <header>
+      <h1>MoneyTree Loan Finder</h1>
+    </header>
+    <main>
+      <section>
+        <div>
+          <h3>
+            Progress
+          </h3>
+          <progress min="0" max="100" value="30"></progress>
+        </div>
+      </section>
+      <section id="product">
+        <h2>What type of loan are you looking for?</h2>
+        <button value="PP_REFI" class="PRODUCT navFor">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24">
+            <path d="M17 12c-3.313 0-6 2.687-6 6s2.687 6 6 6 6-2.687 6-6-2.687-6-6-6zm.5 8.474v.526h-.5v-.499c-.518-.009-1.053-.132-1.5-.363l.228-.822c.478.186 1.114.383 1.612.27.574-.13.692-.721.057-1.005-.465-.217-1.889-.402-1.889-1.622 0-.681.52-1.292 1.492-1.425v-.534h.5v.509c.362.01.768.073 1.221.21l-.181.824c-.384-.135-.808-.257-1.222-.232-.744.043-.81.688-.29.958.856.402 1.972.7 1.972 1.773.001.858-.672 1.315-1.5 1.432zm1.624-10.179c1.132-.223 2.162-.626 2.876-1.197v.652c0 .499-.386.955-1.007 1.328-.581-.337-1.208-.6-1.869-.783zm-2.124-5.795c2.673 0 5-1.007 5-2.25s-2.327-2.25-5-2.25c-2.672 0-5 1.007-5 2.25s2.328 2.25 5 2.25zm.093-2.009c-.299-.09-1.214-.166-1.214-.675 0-.284.334-.537.958-.593v-.223h.321v.211c.234.005.494.03.784.09l-.116.342c-.221-.051-.467-.099-.708-.099l-.072.001c-.482.02-.521.287-.188.399.547.169 1.267.292 1.267.74 0 .357-.434.548-.967.596v.22h-.321v-.208c-.328-.003-.676-.056-.962-.152l.147-.343c.244.063.552.126.828.126l.208-.014c.369-.053.443-.3.035-.418zm-11.093 13.009c1.445 0 2.775-.301 3.705-.768.311-.69.714-1.329 1.198-1.899-.451-1.043-2.539-1.833-4.903-1.833-2.672 0-5 1.007-5 2.25s2.328 2.25 5 2.25zm.093-2.009c-.299-.09-1.214-.166-1.214-.675 0-.284.335-.537.958-.593v-.223h.321v.211c.234.005.494.03.784.09l-.117.342c-.22-.051-.466-.099-.707-.099l-.072.001c-.482.02-.52.287-.188.399.547.169 1.267.292 1.267.74 0 .357-.434.548-.967.596v.22h-.321v-.208c-.329-.003-.676-.056-.962-.152l.147-.343c.244.063.552.126.828.126l.208-.014c.368-.053.443-.3.035-.418zm4.003 8.531c-.919.59-2.44.978-4.096.978-2.672 0-5-1.007-5-2.25v-.652c1.146.918 3.109 1.402 5 1.402 1.236 0 2.499-.211 3.549-.611.153.394.336.773.547 1.133zm-9.096-3.772v-.651c1.146.917 3.109 1.401 5 1.401 1.039 0 2.094-.151 3.028-.435.033.469.107.926.218 1.37-.888.347-2.024.565-3.246.565-2.672 0-5-1.007-5-2.25zm0-2.5v-.652c1.146.918 3.109 1.402 5 1.402 1.127 0 2.275-.176 3.266-.509-.128.493-.21 1.002-.241 1.526-.854.298-1.903.483-3.025.483-2.672 0-5-1.007-5-2.25zm11-11v-.652c1.146.918 3.109 1.402 5 1.402 1.892 0 3.854-.484 5-1.402v.652c0 1.243-2.327 2.25-5 2.25-2.672 0-5-1.007-5-2.25zm0 5v-.652c.713.571 1.744.974 2.876 1.197-.661.183-1.287.446-1.868.783-.622-.373-1.008-.829-1.008-1.328zm0-2.5v-.651c1.146.917 3.109 1.401 5 1.401 1.892 0 3.854-.484 5-1.401v.651c0 1.243-2.327 2.25-5 2.25-2.672 0-5-1.007-5-2.25z"/>
+          </svg>
+          <h3>Refinance</h3>
+        </button>
+        <button value="PP_NEWHOME" class="PRODUCT navFor">
+          <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
+            <path d="M2 16v6l-2-.014v-7.995l4.998-3.997 2.359 2.481 7.618-6.478 7.025 5.855v10.148h-2.991v-6h-4.009v6h-6.991v-6h-6.009zm5 5v1h-3.991v-1h3.991zm-3.991-2h3.991v1h-3.991v-1zm10-3h-2.009v3h2.009v-3zm-10 1h3.991v1h-3.991v-1zm11.985-15l9.006 7.67-1.328 1.493-7.678-6.489-7.569 6.456-1.427-1.465 8.996-7.665z"/>
+          </svg>
+          <h3>Purchase a Home</h3>
+        </button>
+      </section>
+      <section id="property">
+        <h2>Tell us more about the property.</h2>
+        <div>
+          <h3>Property Type</h3>
+          <button class="PROP_DESC" value="SINGLE_FAM">Single Family</button>
+          <button class="PROP_DESC" value="MULTI_FAM">Multiple Family</button>
+          <button class="PROP_DESC" value="CONDO">Condominium</button>
+          <button class="PROP_DESC" value="TOWNHOME">Town House</button>
+          <button class="PROP_DESC" value="MOBILEHOME">Mobile Home</button>
+        </div>
+        <div>
+          <h3>Property value</h3>
+          <input class="EST_VAL" min="50000" max="5000000" type="range" value="175000">
+        </div>
+        <!--If they select "Home Purchase"-->
+        <div>
+          <h3>Down payment percentage</h3>
+          <input class="DOWN_PMT" min="0" max="90" value="20" type="range">
+        </div>
+        <div>
+          <h3>Have you found a specific home?</h3>
+          <button class="SPEC_HOME" value="YES">Yes</button>
+          <button class="SPEC_HOME" value="NO">No</button>
+        </div>
+        <!--If Yes-->
+        <div>
+          <h3>Property State</h3>
+          <select class="PROP_ST">
+            <option disabled hidden selected></option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+          </select>
+        </div>
+        <!--This always shows if they selected Refinance-->
+        <div>
+          <h3>Property Zip Code (Optional)</h3>
+          <input class="PROP_ZIP" type="number">
+        </div>
+        <!---------------------------------->
+        <div>
+          <h3>Property purpose (optional)</h3>
+          <button class="PROP_PURP" value="PRIMARY">Primary Residence</button>
+          <button class="PROP_PURP" value="SECONDARY_VACTN">Secondary / Vacation</button>
+          <button class="PROP_PURP" value="INVESTMENT">Investment</button>
+        </div>
+        <div>
+          <button class="navBack">Back</button>
+          <button class="navFor">Next</button>
+        </div>
+      </section>
+      <section id="financial">
+        <h2>Tell us more about your financial situation.</h2>
+        <div>
+          <h3>Credit score</h3>
+          <button class="CRED_GRADE" value="EXCELLENT">Excellent</button>
+          <button class="CRED_GRADE" value="GOOD">Good</button>
+          <button class="CRED_GRADE" value="FAIR">Fair</button>
+          <button class="CRED_GRADE" value="POOR">Poor</button>
+        </div>
+        <!--If they select "Refinance"-->
+        <div>
+          <h3>Current loan type</h3>
+          <button class="LOAN_TYPE" value="FIXED">Fixed-rate</button>
+          <button class="LOAN_TYPE" value="ADJUSTABLE">Adjustable-rate</button>
+          <button class="LOAN_TYPE" value="FIXED_OR_ADJUSTABLE">Both</button>
+        </div>
+        <div>
+          <h3>Current mortgage balance</h3>
+          <input class="BAL_ONE" min="50000" max="5000000" value="140000" step="1000" type="range">
+        </div>
+        <div>
+          <h3>Current mortgage interest rate (optional)</h3>
+          <input class="MTG_ONE_INT" min="1" max="24" value="5.25" step="0.05" type="range">
+        </div>
+        <div>
+          <h3>Additional amount to borrow (optional)</h3>
+          <input class="ADD_CASH" max="2000000" min="0" value="0" type="range">
+        </div>
+        <!------------------------------>
+        <div>
+          <h3>Have you been in a bankruptcy or foreclosure in the past three years? (optional)</h3>
+          <button class="FHA_BANK_FORECLOSURE" value="YES">Yes</button>
+          <button class="FHA_BANK_FORECLOSURE" value="NO">No</button>
+        </div>
+        <div>
+          <h3>Are you currently employed? (optional)</h3>
+          <button class="ANNUAL_VERIFIABLE_INCOME" value="YES">Yes</button>
+          <button class="ANNUAL_VERIFIABLE_INCOME" value="NO">No</button>
+        </div>
+        <div>
+          <h3>How many late mortgage payments have you had in the past twelve months? (optional)</h3>
+          <button class="NUM_MORTGAGE_LATES" value="NONE">None</button>
+          <button class="NUM_MORTGAGE_LATES" value="ONE">One</button>
+          <button class="NUM_MORTGAGE_LATES" value="TWO_OR_MORE">More Than One</button>
+        </div>
+        <!--If they select New Home-->
+        <div>
+          What is your desired loan type?
+          <button class="LOAN_TYPE" value="FIXED">Fixed-rate</button>
+          <button class="LOAN_TYPE" value="ADJUSTABLE">Adjustable-rate</button>
+          <button class="LOAN_TYPE" value="FIXED_OR_ADJUSTABLE">Either</button>
+        </div>
+        <div>
+          <button class="navBack">Back</button>
+          <button class="navFor">Next</button>
+        </div>
+      </section>
+      <section id="info">
+        <h2>Personal information</h2>
+        <div>
+          <label>
+            First name
+            <input type="text">
+          </label>
+          <label>
+            Last name
+            <input type="text">
+          </label>
+        </div>
+        <div>
+          <label>
+            Address
+            <input type="text">
+          </label>
+          <label>
+            City
+            <input type="text">
+          </label>
+          <label>
+            State
+            <select></select>
+          </label>
+        </div>
+        <div>
+          <label>
+            Phone number
+            <input type="tel">
+          </label>
+          <label>
+            Email
+            <input type="email">
+          </label>
+        </div>
+        <div>
+          <h3>Are you or your spouse a service member or veteran? (optional)</h3>
+          <button>Yes</button>
+          <button>No</button>
+        </div>
+        <div>
+          <button class="navBack">Back</button>
+          <button class="navFor">Next</button>
+        </div>
+      </section>
+      <!--If they selected Home Purchase-->
+      <section id="other">
+        <h2>Other questions</h2>
+        <div>
+          <h3>Desired loan type</h3>
+          <button>Fixed-rate</button>
+          <button>Adjustable-rate</button>
+          <button>Either</button>
+        </div>
+        <div>
+          <h3>When are you likely to buy the home? (optional)</h3>
+          <button>Immediately</button>
+          <button>Within 30 Days</button>
+          <button>Within 60 Days</button>
+          <button>Within 90 Days</button>
+          <button>No Time Constraint</button>
+        </div>
+        <div>
+          <button class="navBack">Back</button>
+          <button class="navFor">Next</button>
+        </div>
+      </section>
+      <!--------------------------------->
+    </main>
+  </body>
+</html>
+<script src="index.js"></script>
