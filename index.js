@@ -16,7 +16,17 @@ const fields = [
   "ADD_CASH",
   "FHA_BANK_FORECLOSURE",
   "ANNUAL_VERIFIABLE_INCOME",
-  "NUM_MORTGAGE_LATES"
+  "NUM_MORTGAGE_LATES",
+  "FNAME",
+  "LNAME",
+  "ADDRESS",
+  "CITY",
+  "STATE",
+  "ZIP",
+  "PRI_PHON",
+  "EMAIL",
+  "VA_STATUS",
+  "BUY_TIMEFRAME"
 ]
 let data = {}
 
