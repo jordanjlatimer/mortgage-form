@@ -78,7 +78,7 @@ h2{
   align-self: center;
 }
 
-form > div:nth-of-type(2){
+form > div:nth-of-type(1){
   opacity: 1;
   display: flex;
 }
@@ -107,9 +107,9 @@ form > div > div:first-of-type{
 }
 
 .navBack{
+  display: block;
   height: 40px;
-  width: 80px;
-  background-color: #ffd9d5;
+  width: 40px;
   border: none;
   border-radius: 4px;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, .5);
@@ -117,16 +117,27 @@ form > div > div:first-of-type{
   cursor: pointer;
 }
 
+.navBack svg{
+  width: 100%;
+  margin: auto;
+}
+
 .navFor{
+  display: block;
   height: 40px;
-  width: 80px;
-  background-color: #ceffdb;
+  width: 40px;
   margin-left: auto;
   border: none;
   border-radius: 6px;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, .5);
   align-self: center;
   cursor: pointer;
+}
+
+.navFor svg{
+  width: 100%;
+  margin: auto;
+  transform: rotate(180deg);
 }
 
 form > div > div:nth-of-type(2){
@@ -186,17 +197,16 @@ input[type="radio"]:checked ~ span > span{
   color: white;
 }
 
-input[type="radio"]:checked ~ span > span path{
+input[type="radio"]:checked ~ span > span path, input[type="radio"]:checked ~ span > span text{
   fill: white;
 }
 
 svg{
-  border: 1px red solid;
   width: 70%;
   margin-bottom: 10px;
 }
 
-path{
+path, text{
   fill: #00aeef;
 }
 

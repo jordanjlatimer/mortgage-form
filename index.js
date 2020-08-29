@@ -39,3 +39,21 @@ navigators.map((className) => {
     });
   });
 });
+
+Array.prototype.forEach.call(document.getElementsByTagName("label"), (element) => {
+  element.addEventListener("click", () => {
+    if (event.currentTarget.tagName !== "label"){
+      return;
+    }
+    console.log("a", currentModule);
+    const module = currentModule;
+    currentModule += 1;
+    console.log("b", currentModule)
+    document.getElementById(modules[module]).style.animation = "fadeForOut 850ms forwards running";
+    document.getElementById(modules[module + 1]).style.display = "flex";
+    document.getElementById(modules[module + 1]).style.animation = "fadeForIn 850ms forwards running";
+    setTimeout(() => {
+      document.getElementById(modules[module]).style.display = "none";
+    }, 850);
+  }, true)
+})
