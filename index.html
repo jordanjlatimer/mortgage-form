@@ -1,88 +1,454 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+    <h1>MoneyTree</h1>
     <form>
-      <header>
-        <h1>MoneyTree Loan Finder</h1>
-      </header>
-      <div>
-        <h2>Progress</h2>
-        <progress min="0" max="100" value="30"></progress>
-      </div>
       <div id="PRODUCT">
-        <fieldset>
-          <legend>What type of loan are you looking for?</legend>
+        <div>
+          <button type="button" class="navBack" style="visibility: hidden;">Back</button>
+          <h2>What type of loan are you looking for?</h2>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
           <label>
-            Refinance
             <input type="radio" value="PP_REFI" name="PRODUCT">
+            <span><span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 3 24 18">
+                  <path d="M12.164 7.165c-1.15.191-1.702 1.233-1.231 2.328.498 1.155 1.921 1.895 3.094 1.603 1.039-.257 1.519-1.252 1.069-2.295-.471-1.095-1.784-1.827-2.932-1.636zm1.484 2.998l.104.229-.219.045-.097-.219c-.226.041-.482.035-.719-.027l-.065-.387c.195.03.438.058.623.02l.125-.041c.221-.109.152-.387-.176-.453-.245-.054-.893-.014-1.135-.552-.136-.304-.035-.621.356-.766l-.108-.239.217-.045.104.229c.159-.026.345-.036.563-.017l.087.383c-.17-.021-.353-.041-.512-.008l-.06.016c-.309.082-.21.375.064.446.453.105.994.139 1.208.612.173.385-.028.648-.36.774zm10.312 1.057l-3.766-8.22c-6.178 4.004-13.007-.318-17.951 4.454l3.765 8.22c5.298-4.492 12.519-.238 17.952-4.454zm-2.803-1.852c-.375.521-.653 1.117-.819 1.741-3.593 1.094-7.891-.201-12.018 1.241-.667-.354-1.503-.576-2.189-.556l-1.135-2.487c.432-.525.772-1.325.918-2.094 3.399-1.226 7.652.155 12.198-1.401.521.346 1.13.597 1.73.721l1.315 2.835zm2.843 5.642c-6.857 3.941-12.399-1.424-19.5 5.99l-4.5-9.97 1.402-1.463 3.807 8.406-.002.007c7.445-5.595 11.195-1.176 18.109-4.563.294.648.565 1.332.684 1.593z"/>
+                </svg>
+              Refinance
+            </span></span>
           </label>
           <label>
-            Purchase a Home
             <input type="radio" value="PP_NEWHOME" name="PRODUCT">
+            <span><span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 2 24 20">
+                <path d="M2 16v6l-2-.014v-7.995l4.998-3.997 2.359 2.481 7.618-6.478 7.025 5.855v10.148h-2.991v-6h-4.009v6h-6.991v-6h-6.009zm5 5v1h-3.991v-1h3.991zm-3.991-2h3.991v1h-3.991v-1zm10-3h-2.009v3h2.009v-3zm-10 1h3.991v1h-3.991v-1zm11.985-15l9.006 7.67-1.328 1.493-7.678-6.489-7.569 6.456-1.427-1.465 8.996-7.665z"/>
+              </svg>
+              Purchase a Home
+            </span></span>
           </label>
-        </fieldset>
-        <!---------------------------------------------------------
-          <button value="PP_REFI" class="PRODUCT navFor">
-            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24">
-              <path d="M17 12c-3.313 0-6 2.687-6 6s2.687 6 6 6 6-2.687 6-6-2.687-6-6-6zm.5 8.474v.526h-.5v-.499c-.518-.009-1.053-.132-1.5-.363l.228-.822c.478.186 1.114.383 1.612.27.574-.13.692-.721.057-1.005-.465-.217-1.889-.402-1.889-1.622 0-.681.52-1.292 1.492-1.425v-.534h.5v.509c.362.01.768.073 1.221.21l-.181.824c-.384-.135-.808-.257-1.222-.232-.744.043-.81.688-.29.958.856.402 1.972.7 1.972 1.773.001.858-.672 1.315-1.5 1.432zm1.624-10.179c1.132-.223 2.162-.626 2.876-1.197v.652c0 .499-.386.955-1.007 1.328-.581-.337-1.208-.6-1.869-.783zm-2.124-5.795c2.673 0 5-1.007 5-2.25s-2.327-2.25-5-2.25c-2.672 0-5 1.007-5 2.25s2.328 2.25 5 2.25zm.093-2.009c-.299-.09-1.214-.166-1.214-.675 0-.284.334-.537.958-.593v-.223h.321v.211c.234.005.494.03.784.09l-.116.342c-.221-.051-.467-.099-.708-.099l-.072.001c-.482.02-.521.287-.188.399.547.169 1.267.292 1.267.74 0 .357-.434.548-.967.596v.22h-.321v-.208c-.328-.003-.676-.056-.962-.152l.147-.343c.244.063.552.126.828.126l.208-.014c.369-.053.443-.3.035-.418zm-11.093 13.009c1.445 0 2.775-.301 3.705-.768.311-.69.714-1.329 1.198-1.899-.451-1.043-2.539-1.833-4.903-1.833-2.672 0-5 1.007-5 2.25s2.328 2.25 5 2.25zm.093-2.009c-.299-.09-1.214-.166-1.214-.675 0-.284.335-.537.958-.593v-.223h.321v.211c.234.005.494.03.784.09l-.117.342c-.22-.051-.466-.099-.707-.099l-.072.001c-.482.02-.52.287-.188.399.547.169 1.267.292 1.267.74 0 .357-.434.548-.967.596v.22h-.321v-.208c-.329-.003-.676-.056-.962-.152l.147-.343c.244.063.552.126.828.126l.208-.014c.368-.053.443-.3.035-.418zm4.003 8.531c-.919.59-2.44.978-4.096.978-2.672 0-5-1.007-5-2.25v-.652c1.146.918 3.109 1.402 5 1.402 1.236 0 2.499-.211 3.549-.611.153.394.336.773.547 1.133zm-9.096-3.772v-.651c1.146.917 3.109 1.401 5 1.401 1.039 0 2.094-.151 3.028-.435.033.469.107.926.218 1.37-.888.347-2.024.565-3.246.565-2.672 0-5-1.007-5-2.25zm0-2.5v-.652c1.146.918 3.109 1.402 5 1.402 1.127 0 2.275-.176 3.266-.509-.128.493-.21 1.002-.241 1.526-.854.298-1.903.483-3.025.483-2.672 0-5-1.007-5-2.25zm11-11v-.652c1.146.918 3.109 1.402 5 1.402 1.892 0 3.854-.484 5-1.402v.652c0 1.243-2.327 2.25-5 2.25-2.672 0-5-1.007-5-2.25zm0 5v-.652c.713.571 1.744.974 2.876 1.197-.661.183-1.287.446-1.868.783-.622-.373-1.008-.829-1.008-1.328zm0-2.5v-.651c1.146.917 3.109 1.401 5 1.401 1.892 0 3.854-.484 5-1.401v.651c0 1.243-2.327 2.25-5 2.25-2.672 0-5-1.007-5-2.25z"/>
-            </svg>
-            <legend>Refinance</legend>
-          </button>
-          <button value="PP_NEWHOME" class="PRODUCT navFor">
-            <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
-              <path d="M2 16v6l-2-.014v-7.995l4.998-3.997 2.359 2.481 7.618-6.478 7.025 5.855v10.148h-2.991v-6h-4.009v6h-6.991v-6h-6.009zm5 5v1h-3.991v-1h3.991zm-3.991-2h3.991v1h-3.991v-1zm10-3h-2.009v3h2.009v-3zm-10 1h3.991v1h-3.991v-1zm11.985-15l9.006 7.67-1.328 1.493-7.678-6.489-7.569 6.456-1.427-1.465 8.996-7.665z"/>
-            </svg>
-            <legend>Purchase a Home</legend>
-          </button>
-        ---------------------------------------------------------->
+        </div>
+      </div>
       <div id="PROP_DESC">
-        <fieldset>
-          <legend>Property Type</legend>
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <h2>Property Type</h2>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
           <label>
-            Single Family
             <input type="radio" value="SINGLE_FAM" name="PROP_DESC">
+            <span><span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20.822 18.096c-3.439-.794-6.64-1.49-5.09-4.418 4.72-8.912 1.251-13.678-3.732-13.678-5.082 0-8.464 4.949-3.732 13.678 1.597 2.945-1.725 3.641-5.09 4.418-3.073.71-3.188 2.236-3.178 4.904l.004 1h23.99l.004-.969c.012-2.688-.092-4.222-3.176-4.935z"/>
+              </svg>
+              Single Family
+            </span></span>
           </label>
           <label>
-            Multiple Family
             <input type="radio" value="MULTI_FAM" name="PROP_DESC">
+            <span><span>
+              <svg viewBox="0 0 24 12" style="width: 100%;" xmlns="http://www.w3.org/2000/svg">
+                <path id="svg_1" d="m17.997,12.0625l-11.995,0l-0.002,-0.623c0,-1.259 0.1,-1.986 1.588,-2.33c1.684,-0.389 3.344,-0.736 2.545,-2.209c-2.366,-4.363 -0.674,-6.838 1.866,-6.838c2.491,0 4.226,2.383 1.866,6.839c-0.775,1.464 0.826,1.812 2.545,2.209c1.49,0.344 1.589,1.072 1.589,2.333l-0.002,0.619zm4.811,-2.214c-1.29,-0.298 -2.49,-0.559 -1.909,-1.657c1.769,-3.342 0.469,-5.129 -1.4,-5.129c-1.265,0 -2.248,0.817 -2.248,2.324c0,3.903 2.268,1.77 2.246,6.676l4.501,0l0.002,-0.463c0,-0.946 -0.074,-1.493 -1.192,-1.751zm-22.806,2.214l4.501,0c-0.021,-4.906 2.246,-2.772 2.246,-6.676c0,-1.507 -0.983,-2.324 -2.248,-2.324c-1.869,0 -3.169,1.787 -1.399,5.129c0.581,1.099 -0.619,1.359 -1.909,1.657c-1.119,0.258 -1.193,0.805 -1.193,1.751l0.002,0.463z"/>
+              </svg>
+              Multiple Family
+            </span></span>
           </label>
           <label>
-            Condominium
             <input type="radio" value="CONDO" name="PROP_DESC">
+            <span><span>
+              <svg viewBox="0 0 22 24" xmlns="http://www.w3.org/2000/svg" clip-rule="evenodd">
+                <path id="svg_1" d="m0,22l2,0l0,-22l18,0l0,22l2,0l0,2l-22,0l0,-2zm7,-3l0,4l3,0l0,-4l-3,0zm5,0l0,4l3,0l0,-4l-3,0zm-6,-5l-2,0l0,2l2,0l0,-2zm8,0l-2,0l0,2l2,0l0,-2zm-4,0l-2,0l0,2l2,0l0,-2zm8,0l-2,0l0,2l2,0l0,-2zm-12,-4l-2,0l0,2l2,0l0,-2zm8,0l-2,0l0,2l2,0l0,-2zm-4,0l-2,0l0,2l2,0l0,-2zm8,0l-2,0l0,2l2,0l0,-2zm-12,-4l-2,0l0,2l2,0l0,-2zm8,0l-2,0l0,2l2,0l0,-2zm-4,0l-2,0l0,2l2,0l0,-2zm8,0l-2,0l0,2l2,0l0,-2zm-12,-4l-2,0l0,2l2,0l0,-2zm8,0l-2,0l0,2l2,0l0,-2zm-4,0l-2,0l0,2l2,0l0,-2zm8,0l-2,0l0,2l2,0l0,-2z"/>
+              </svg>
+              Condominium
+            </span></span>
           </label>
           <label>
-            Town House
             <input type="radio" value="TOWNHOME" name="PROP_DESC">
+            <span><span>
+              <svg viewbox="0 0 24 22" xmlns="http://www.w3.org/2000/svg" clip-rule="evenodd">
+                <path id="svg_1" d="m9.0625,19.1875l-3,0l0,3l-4,0l0,-8.766l5.698,-4.921l1.711,1.384l6.591,-5.697l6,5.236l0,12.764l-5,0l0,-4l-3,0l0,4l-5,0l0,-3zm-2,-5l-2,0l0,2l2,0l0,-2zm3,0l-2,0l0,2l2,0l0,-2zm5,-1l-2,0l0,2l2,0l0,-2zm3,0l-2,0l0,2l2,0l0,-2zm-8.642,-7.253l6.642,-5.747l8,7l-1.329,1.495l-6.671,-5.819l-6.624,5.738l-1.678,-1.414l-6.369,5.495l-1.329,-1.495l7.698,-6.676l1.66,1.423zm5.642,4.253l-2,0l0,2l2,0l0,-2zm3,0l-2,0l0,2l2,0l0,-2z"/>
+              </svg>
+              Town House
+            </span></span>
           </label>
           <label>
-            Mobile Home
             <input type="radio" value="MOBILEHOME" name="PROP_DESC">
+            <span><span>
+              <svg viewBox="0 0 300 276" xmlns="http://www.w3.org/2000/svg">
+                <path id="svg_2" d="m96.146,142.294c0,-4.418 -3.582,-8 -8,-8l-32,0c-4.418,0 -8,3.582 -8,8l0,32c0,4.418 3.582,8 8,8l32,0c4.418,0 8,-3.582 8,-8l0,-32zm-32,8l16,0l0,16l-16,0l0,-16z"/>
+                <path id="svg_3" d="m163.146,142.294c0,-4.418 -3.582,-8 -8,-8l-32,0c-4.418,0 -8,3.582 -8,8l0,32c0,4.418 3.582,8 8,8l32,0c4.418,0 8,-3.582 8,-8l0,-32zm-32,8l16,0l0,16l-16,0l0,-16z"/>
+                <path id="svg_4" d="m230.146,142.294c0,-4.418 -3.582,-8 -8,-8l-32,0c-4.418,0 -8,3.582 -8,8l0,32c0,4.418 3.582,8 8,8l32,0c4.418,0 8,-3.582 8,-8l0,-32zm-32,8l16,0l0,16l-16,0l0,-16z"/>
+                <path transform="matrix(1,0,0,1,0,0) " id="svg_5" d="m288.479,208.294l-25.333,0l0,-90l9.145,0c2.334,0 4.552,-0.965 6.071,-2.735c1.332,-1.553 2.011,-3.521 1.92,-5.542c-0.01,-0.321 -0.034,-0.63 -0.084,-0.951l-15.52,-100.993c-0.6,-3.903 -3.958,-6.778 -7.907,-6.778l-232.584,0c-3.93,0 -7.277,2.854 -7.899,6.734l-16.187,101c-0.052,0.324 -0.078,0.648 -0.09,0.974c-0.103,2.027 0.57,3.976 1.901,5.537c1.52,1.782 3.745,2.755 6.088,2.755l7.147,0l0,123c0,4.418 3.915,8 8.333,8l18.79,0c3.162,14.775 16.315,25.891 32.021,25.891c15.706,0 28.859,-11.115 32.022,-25.891l67.291,0c3.162,14.775 16.315,25.891 32.021,25.891c15.706,0 28.859,-11.115 32.021,-25.891l17.833,0c4.418,0 7.667,-3.582 7.667,-8l0,-17l25.333,0c4.418,0 8,-3.582 8,-8s-3.582,-8.001 -8,-8.001zm-66.105,34.141c0,9.236 -7.514,16.75 -16.75,16.75s-16.75,-7.514 -16.75,-16.75c0,-9.236 7.514,-16.75 16.75,-16.75s16.75,7.513 16.75,16.75zm-131.334,0c0,9.236 -7.514,16.75 -16.75,16.75c-9.236,0 -16.75,-7.514 -16.75,-16.75c0,-9.236 8.514,-17.25 17.75,-17.25c9.237,0 15.75,8.013 15.75,17.25zm-59.894,-124.141l216,0l0,115l-10.079,0c-3.967,-13.623 -16.557,-23.609 -31.442,-23.609c-14.886,0 -27.476,9.986 -31.442,23.609l-68.449,0c-3.967,-13.623 -16.557,-23.609 -31.442,-23.609c-14.886,0 -27.476,9.986 -31.442,23.609l-11.704,0l0,-115zm218.761,-101l2.706,18l-224.428,0l2.822,-18l218.9,0zm13.06,85l-245.584,0l3.286,-20l239.149,0l3.149,20zm-5.608,-36l-234.125,0l2.404,-15l229.416,0l2.305,15z"/>
+              </svg>
+              Mobile Home
+            </span></span>
           </label>
-        </fieldset>
+        </div>
       </div>
       <div id="EST_VAL">
-        <h3>Property value</h3>
-        <input name="EST_VAL" min="50000" max="5000000" type="range" value="175000">
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <h2>Property Value</h2>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
+          <input name="EST_VAL" min="50000" max="5000000" type="range" value="175000">
+        </div>
       </div>
       <!--If they select "Home Purchase"-->
       <div id="DOWN_PMT">
-        <h3>Down payment percentage</h3>
-        <input class="DOWN_PMT" min="0" max="90" value="20" type="range">
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <h2>Down Payment Percentage</h2>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
+          <input name="DOWN_PMT" min="0" max="90" value="20" type="range">
+        </div>
       </div>
       <div id="SPEC_HOME">
-        <legend>Have you found a specific home?</legend>
-        <fieldset>
-          <input type="radio" name="SPEC_HOME" value="YES">Yes</button>
-          <input type="radio" name="SPEC_HOME" value="NO">No</button>
-        </fieldset>
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <h2>Have you found a specific home?</h2>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
+          <label>
+            <input type="radio" name="SPEC_HOME" value="YES">
+            <span><span>
+              <svg viewBox="0 0 24 19" xmlns="http://www.w3.org/2000/svg">
+                <path id="svg_1" d="m20.285,0l-11.285,11.567l-5.286,-5.011l-3.714,3.716l9,8.728l15,-15.285l-3.715,-3.715z"/>
+              </svg>
+              Yes
+            </span></span>
+          </label>
+          <label>
+            <input type="radio" name="SPEC_HOME" value="NO">
+            <span><span>No</span></span>
+          </label>
+        </div>
       </div>
-          <!--If Yes-->
-          <div>
-            <select class="PROP_ST">
+      <!--If Yes-->
+      <div id="PROP_ST">
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <h2>Property State</h2>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
+          <select name="PROP_ST">
+            <option disabled hidden selected></option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+          </select>
+        </div>
+      </div>
+      <!--This always shows if they selected Refinance-->
+      <div id="PROP_ZIP">
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <h2>Property Zip Code</h2>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
+          <input name="PROP_ZIP" type="number">
+        </div>
+      </div>
+      <!---------------------------------->
+      <div id="PROP_PURP">
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <h2>Property purpose (optional)</h2>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
+          <label>
+            <input type="radio" name="PROP_PURP" value="PRIMARY">
+            <span><span>Primary Residence</span></span>
+          </label>
+          <label>
+            <input type="radio" name="PROP_PURP" value="SECONDARY_VACTN">
+            <span><span>Secondary / Vacation</span></span>
+          </label>
+          <label>
+            <input type="radio" name="PROP_PURP" value="INVESTMENT">
+            <span><span>Investment</span></span>
+          </label>
+        </div>
+      </div>
+      <div id="BUY_TIMEFRAME">
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <h2>When are you likely to buy the home? (optional)</h2>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
+          <label>
+            <input type="radio" name="BUY_TIMEFRAME" value="IMMEDIATELY">
+            <span><span>Immediately</span></span>
+          </label>
+          <label>
+            <input type="radio" name="BUY_TIMEFRAME" value="30_DAYS">
+            <span><span>Within 30 Days</span></span>
+          </label>
+          <label>
+            <input type="radio" name="BUY_TIMEFRAME" value="60_DAYS">
+            <span><span>Within 60 Days</span></span>
+          </label>
+          <label>
+            <input type="radio" name="BUY_TIMEFRAME" value="90_DAYS">
+            <span><span>Within 90 Days</span></span>
+          </label>
+          <label>
+            <input type="radio" name="BUY_TIMEFRAME" value="NO_TIME_CONSTRAINT">
+            <span><span>No Time Constraint</span></span>
+          </label>
+        </div>
+      </div>
+      <div id="CRED_GRADE">
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <h2>Credit score</h2>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
+          <label>
+            <input type="radio" name="CRED_GRADE" value="EXCELLENT">
+            <span><span>Excellent</span></span>
+          </label>
+          <label>
+            <input type="radio" name="CRED_GRADE" value="GOOD">
+            <span><span>Good</span></span>
+          </label>
+          <label>
+            <input type="radio" name="CRED_GRADE" value="FAIR">
+            <span><span>Fair</span></span>
+          </label>
+          <label>
+            <input type="radio" name="CRED_GRADE" value="POOR">
+            <span><span>Poor</span></span>
+          </label>
+        </div>
+      </div>
+      <!--If they select "Refinance"-->
+      <div id="LOAN_TYPE">
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <h2>Current loan type</h2>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
+          <label>
+            <input type="radio" name="LOAN_TYPE" value="FIXED">
+            <span><span>Fixed-rate</span></span>
+          </label>
+          <label>
+            <input type="radio" name="LOAN_TYPE" value="ADJUSTABLE">
+            <span><span>Adjustable-rate</span></span>
+          </label>
+          <label>
+            <input type="radio" name="LOAN_TYPE" value="FIXED_OR_ADJUSTABLE">
+            <span><span>Both</span></span>
+          </label>
+        </div>
+      </div>
+      <div id="BAL_ONE">
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <h2>Current Mortgage Balance</h2>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
+          <input name="BAL_ONE" min="50000" max="5000000" value="140000" step="1000" type="range">
+        </div>
+      </div>
+      <div id="MTG_ONE_INT">
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
+          <h2>Current Mortgage Interest Rate (optional)</h2>
+          <input name="MTG_ONE_INT" min="1" max="24" value="5.25" step="0.05" type="range">
+        </div>
+      </div>
+      <div id="ADD_CASH">
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
+          <h2>How Much Additional Cash Would You Like To Borrow? (optional)</h2>
+          <input name="ADD_CASH" max="2000000" min="0" value="0" type="range">
+        </div>
+      </div>
+      <!------------------------------>
+      <div id="FHA_BANK_FORECLOSURE">
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
+          <h2>Have you been in a bankruptcy or foreclosure in the past three years? (optional)</h2>
+          <label>
+            <input type="radio" name="FHA_BANK_FORECLOSURE" value="YES">
+            <span><span>
+              <svg viewBox="0 0 24 19" xmlns="http://www.w3.org/2000/svg">
+                <path id="svg_1" d="m20.285,0l-11.285,11.567l-5.286,-5.011l-3.714,3.716l9,8.728l15,-15.285l-3.715,-3.715z"/>
+              </svg>
+              Yes
+            </span></span>
+          </label>
+          <label>
+            <input type="radio" name="FHA_BANK_FORECLOSURE" value="NO">
+            <span><span>No</span></span>
+          </label>
+        </div>
+      </div>
+      <div id="ANNUAL_VERIFIABLE_INCOME">
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
+          <h2>Are you currently employed? (optional)</h2>
+          <label>
+            <input type="radio" name="ANNUAL_VERIFIABLE_INCOME" value="YES">
+            <span><span>
+              <svg viewBox="0 0 24 19" xmlns="http://www.w3.org/2000/svg">
+                <path id="svg_1" d="m20.285,0l-11.285,11.567l-5.286,-5.011l-3.714,3.716l9,8.728l15,-15.285l-3.715,-3.715z"/>
+              </svg>
+              Yes
+            </span></span>
+          </label>
+          <label>
+            <input type="radio" name="ANNUAL_VERIFIABLE_INCOME" value="NO">
+            <span><span>No</span></span>
+          </label>
+        </div>
+      </div>
+      <div id="NUM_MORTGAGE_LATES">
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        </div>
+        <div>
+          <h2>How many late mortgage payments have you had in the past twelve months? (optional)</h2>
+          <label>
+            <input type="radio" name="NUM_MORTGAGE_LATES" value="NONE">
+            <span><span>None</span></span>
+          </label>
+          <label>
+            <input type="radio" name="NUM_MORTGAGE_LATES" value="ONE">
+            <span><span>One</span></span>
+          </label>
+          <label>
+            <input type="radio" name="NUM_MORTGAGE_LATES" value="TWO_OR_MORE">
+            <span><span>More Than One</span></span>
+          </label>
+        </div>
+      </div>
+      <div id="VA_STATUS">
+        <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        <h2>Are you or your spouse a service member or veteran? (optional)</h2>
+        <button type="button" class="navFor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+        <label>
+          <input type="radio" name="VA_STATUS" value="YES">
+          <span><span>
+            <svg viewBox="0 0 24 19" xmlns="http://www.w3.org/2000/svg">
+              <path id="svg_1" d="m20.285,0l-11.285,11.567l-5.286,-5.011l-3.714,3.716l9,8.728l15,-15.285l-3.715,-3.715z"/>
+            </svg>
+            Yes
+          </span></span>
+        </label>
+        <label>
+          <input type="radio" name="VA_STATUS" value="NO">
+          <span><span>No</span></span>
+        </label>
+        <input type="hidden" name="SR_TOKEN">
+      </div>
+      <div id="PERSONAL_INFO">
+        <div>
+          <button type="button" class="navBack"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></button>
+          <button type="submit" class="submit">SUBMIT</button>
+        </div>
+        <div>
+          <h2>Personal Information</h2>
+          <label>
+            <input name="FNAME" type="text">
+            <span><span>First name</span></span>
+          </label>
+          <label>
+            <input name="LNAME" type="text">
+            <span><span>Last name</span></span>
+          </label>
+          <label>
+            <input name="ADDRESS" type="text">
+            <span><span>Address</span></span>
+          </label>
+          <label>
+            <input name="CITY" type="text">
+            <span><span>City</span></span>
+          </label>
+          <label>
+            <select name="STATE">
               <option disabled hidden selected></option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
@@ -136,190 +502,42 @@
               <option value="WI">Wisconsin</option>
               <option value="WY">Wyoming</option>
             </select>
-          </div>
-          <!--This always shows if they selected Refinance-->
-          <div>
-            <input class="PROP_ZIP" type="number">
-          </div>
-          <!---------------------------------->
-          <div>
-            <legend>Property purpose (optional)</legend>
-            <input type="radio" class="PROP_PURP" value="PRIMARY">Primary Residence</button>
-            <input type="radio" class="PROP_PURP" value="SECONDARY_VACTN">Secondary / Vacation</button>
-            <input type="radio" class="PROP_PURP" value="INVESTMENT">Investment</button>
-          </div>
-          <div>
-            <legend>When are you likely to buy the home? (optional)</legend>
-            <input type="radio" class="BUY_TIMEFRAME" value="IMMEDIATELY">Immediately</button>
-            <input type="radio" class="BUY_TIMEFRAME" value="30_DAYS">Within 30 Days</button>
-            <input type="radio" class="BUY_TIMEFRAME" value="60_DAYS">Within 60 Days</button>
-            <input type="radio" class="BUY_TIMEFRAME" value="90_DAYS">Within 90 Days</button>
-            <input type="radio" class="BUY_TIMEFRAME" value="NO_TIME_CONSTRAINT">No Time Constraint</button>
-          </div>
-          <div>
-            <button class="navBack">Back</button>
-            <button class="navFor">Next</button>
-          </div>
-        </section>
-        <section id="financial">
-          <h2>Tell us more about your financial situation.</h2>
-          <div>
-            <legend>Credit score</legend>
-            <input type="radio" class="CRED_GRADE" value="EXCELLENT">Excellent</button>
-            <input type="radio" class="CRED_GRADE" value="GOOD">Good</button>
-            <input type="radio" class="CRED_GRADE" value="FAIR">Fair</button>
-            <input type="radio" class="CRED_GRADE" value="POOR">Poor</button>
-          </div>
-          <!--If they select "Refinance"-->
-          <div>
-            <legend>Current loan type</legend>
-            <input type="radio" class="LOAN_TYPE" value="FIXED">Fixed-rate</button>
-            <input type="radio" class="LOAN_TYPE" value="ADJUSTABLE">Adjustable-rate</button>
-            <input type="radio" class="LOAN_TYPE" value="FIXED_OR_ADJUSTABLE">Both</button>
-          </div>
-          <div>
-            <input class="BAL_ONE" min="50000" max="5000000" value="140000" step="1000" type="range">
-          </div>
-          <div>
-            <input class="MTG_ONE_INT" min="1" max="24" value="5.25" step="0.05" type="range">
-          </div>
-          <div>
-            <input class="ADD_CASH" max="2000000" min="0" value="0" type="range">
-          </div>
-          <!------------------------------>
-          <div>
-            <legend>Have you been in a bankruptcy or foreclosure in the past three years? (optional)</legend>
-            <input type="radio" class="FHA_BANK_FORECLOSURE" value="YES">Yes</button>
-            <input type="radio" class="FHA_BANK_FORECLOSURE" value="NO">No</button>
-          </div>
-          <div>
-            <legend>Are you currently employed? (optional)</legend>
-            <input type="radio" class="ANNUAL_VERIFIABLE_INCOME" value="YES">Yes</button>
-            <input type="radio" class="ANNUAL_VERIFIABLE_INCOME" value="NO">No</button>
-          </div>
-          <div>
-            <legend>How many late mortgage payments have you had in the past twelve months? (optional)</legend>
-            <input type="radio" class="NUM_MORTGAGE_LATES" value="NONE">None</button>
-            <input type="radio" class="NUM_MORTGAGE_LATES" value="ONE">One</button>
-            <input type="radio" class="NUM_MORTGAGE_LATES" value="TWO_OR_MORE">More Than One</button>
-          </div>
-          <!--If they select New Home-->
-          <div>
-            What is your desired loan type?
-            <input type="radio" class="LOAN_TYPE" value="FIXED">Fixed-rate</button>
-            <input type="radio" class="LOAN_TYPE" value="ADJUSTABLE">Adjustable-rate</button>
-            <input type="radio" class="LOAN_TYPE" value="FIXED_OR_ADJUSTABLE">Either</button>
-          </div>
-          <div>
-            <button class="navBack">Back</button>
-            <button class="navFor">Next</button>
-          </div>
-        </section>
-        <section id="info">
-          <h2>Personal information</h2>
-          <div>
-            <label>
-              First name
-              <input class="FNAME" type="text">
-            </label>
-            <label>
-              Last name
-              <input class="LNAME" type="text">
-            </label>
-          </div>
-          <div>
-            <label>
-              Address
-              <input class="ADDRESS" type="text">
-            </label>
-            <label>
-              City
-              <input class="CITY" type="text">
-            </label>
-            <label>
-              State
-              <select class="STATE">
-                <option disabled hidden selected></option>
-                <option value="AL">Alabama</option>
-                <option value="AK">Alaska</option>
-                <option value="AZ">Arizona</option>
-                <option value="AR">Arkansas</option>
-                <option value="CA">California</option>
-                <option value="CO">Colorado</option>
-                <option value="CT">Connecticut</option>
-                <option value="DE">Delaware</option>
-                <option value="DC">District Of Columbia</option>
-                <option value="FL">Florida</option>
-                <option value="GA">Georgia</option>
-                <option value="HI">Hawaii</option>
-                <option value="ID">Idaho</option>
-                <option value="IL">Illinois</option>
-                <option value="IN">Indiana</option>
-                <option value="IA">Iowa</option>
-                <option value="KS">Kansas</option>
-                <option value="KY">Kentucky</option>
-                <option value="LA">Louisiana</option>
-                <option value="ME">Maine</option>
-                <option value="MD">Maryland</option>
-                <option value="MA">Massachusetts</option>
-                <option value="MI">Michigan</option>
-                <option value="MN">Minnesota</option>
-                <option value="MS">Mississippi</option>
-                <option value="MO">Missouri</option>
-                <option value="MT">Montana</option>
-                <option value="NE">Nebraska</option>
-                <option value="NV">Nevada</option>
-                <option value="NH">New Hampshire</option>
-                <option value="NJ">New Jersey</option>
-                <option value="NM">New Mexico</option>
-                <option value="NY">New York</option>
-                <option value="NC">North Carolina</option>
-                <option value="ND">North Dakota</option>
-                <option value="OH">Ohio</option>
-                <option value="OK">Oklahoma</option>
-                <option value="OR">Oregon</option>
-                <option value="PA">Pennsylvania</option>
-                <option value="RI">Rhode Island</option>
-                <option value="SC">South Carolina</option>
-                <option value="SD">South Dakota</option>
-                <option value="TN">Tennessee</option>
-                <option value="TX">Texas</option>
-                <option value="UT">Utah</option>
-                <option value="VT">Vermont</option>
-                <option value="VA">Virginia</option>
-                <option value="WA">Washington</option>
-                <option value="WV">West Virginia</option>
-                <option value="WI">Wisconsin</option>
-                <option value="WY">Wyoming</option>
-              </select>
-            </label>
-            <label>
-              Zip
-              <input class="ZIP" type="number">
-            </label>
-          </div>
-          <div>
-            <label>
-              Phone number
-              <input class="PRI_PHON" type="tel">
-            </label>
-            <label>
-              Email
-              <input class="EMAIL" type="email">
-            </label>
-          </div>
-          <div>
-            <legend>Are you or your spouse a service member or veteran? (optional)</legend>
-            <input type="radio" class="VA_STATUS" value="YES">Yes</button>
-            <input type="radio" class="VA_STATUS" value="NO">No</button>
-          </div>
-          <div>
-            <button class="navBack">Back</button>
-            <button class="navFor">Next</button>
-          </div>
-        </section>
-      </main>
+            <span><span>State</span></span>
+          </label>
+          <label>
+            <input name="ZIP" type="number">
+            <span><span>Zip</span></span>
+          </label>
+          <label>
+            <input name="PRI_PHON" type="tel">
+            <span><span>Phone number</span></span>
+          </label>
+          <label>
+            <input name="EMAIL" type="email">
+            <span><span>Email</span></span>
+          </label>
+        </div>
+      </div>
     </form>
+    <script>
+      dataLayer = [{
+        'a': 'Your Account ID goes here',
+        'i': 'Your Channel ID goes here'
+      }];
+    </script>
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KCMVZ6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      (function(w,d,s,l,i){
+        w[l]=w[l]||[];
+        w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+      })
+      (window,document,'script','dataLayer','GTM-KCMVZ6');
+    </script>
   </body>
 </html>
 <script src="index.js"></script>
