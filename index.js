@@ -1,9 +1,9 @@
-let currentModule = 0;
-const navigators = [
-  {name: "navFor", increment: 1, animations: ["fadeForIn", "fadeForOut"]}, 
-  {name: "navBack", increment: -1, animations: ["fadeBackIn", "fadeBackOut"]}
+let curModNum = 0;
+const navs = [
+  {name: "navFor", inc: 1, anims: ["fadeForIn", "fadeForOut"]}, 
+  {name: "navBack", inc: -1, anims: ["fadeBackIn", "fadeBackOut"]}
 ];
-const modules = [
+const mods = [
   "PRODUCT", 
   "PROP_DESC", 
   "EST_VAL", 
@@ -25,35 +25,63 @@ const modules = [
   "PERSONAL_INFO"
 ];
 
-navigators.map((className) => {
+navs.map((className) => {
   Array.prototype.forEach.call(document.getElementsByClassName(className.name), (element) => {
     element.addEventListener("click", () => {
-      const module = currentModule;
-      currentModule += className.increment;
-      document.getElementById(modules[module]).style.animation = className.animations[1] + " 850ms forwards running";
-      document.getElementById(modules[module + className.increment]).style.display = "flex";
-      document.getElementById(modules[module + className.increment]).style.animation = className.animations[0] + " 850ms forwards running";
+      const modNum = curModNum;
+      curModNum += className.inc;
+      let curMod = document.getElementById(mods[modNum])
+      curMod.style.animation = className.anims[1] + " 850ms forwards running";
+      let newMod = document.getElementById(mods[modNum + className.inc])
+      newMod.style.display = "flex";
+      newMod.style.animation = className.anims[0] + " 850ms forwards running";
       setTimeout(() => {
-        document.getElementById(modules[module]).style.display = "none"
+        curMod.style.display = "none"
       }, 850);
     });
   });
 });
 
-Array.prototype.forEach.call(document.getElementsByTagName("label"), (element) => {
+Array.prototype.forEach.call(document.querySelectorAll("label > span"), (element) => {
   element.addEventListener("click", () => {
-    if (event.currentTarget.tagName !== "label"){
-      return;
-    }
-    console.log("a", currentModule);
-    const module = currentModule;
-    currentModule += 1;
-    console.log("b", currentModule)
-    document.getElementById(modules[module]).style.animation = "fadeForOut 850ms forwards running";
-    document.getElementById(modules[module + 1]).style.display = "flex";
-    document.getElementById(modules[module + 1]).style.animation = "fadeForIn 850ms forwards running";
+    const modNum = curModNum;
+    curModNum += 1;
+    let curMod = document.getElementById(mods[modNum])
+    let newMod = document.getElementById(mods[modNum + 1])
+    curMod.style.animation = "fadeForOut 850ms forwards running";
+    curMod.querySelector(".navFor").style.visibility = "visible";
+    curMod.querySelector(".navFor").disabled = false;
+    newMod.style.display = "flex";
+    newMod.style.animation = "fadeForIn 850ms forwards running";
     setTimeout(() => {
-      document.getElementById(modules[module]).style.display = "none";
+      curMod.style.display = "none";
     }, 850);
   }, true)
 })
+
+Array.prototype.forEach.call(document.getElementsByTagName("input"), (element) => {
+  if (element.type.toLowerCase() !== "range"){
+    element.addEventListener("input", () => {
+      element.parentNode.parentNode.querySelector(".navFor").style.visibility = "visible";
+      element.parentNode.parentNode.querySelector(".navFor").disabled = false;
+    });
+    return;
+  };
+  element.addEventListener("input", () => {
+    element.parentNode.parentNode.querySelector(".navFor").style.visibility = "visible";
+    element.parentNode.parentNode.querySelector(".navFor").disabled = false;
+    if (["DOWN_PMT", "MTG_ONE_INT"].includes(element.name)){
+      element.parentNode.getElementsByTagName("h3")[0].innerHTML = parseFloat(event.target.value).toFixed(2).toLocaleString() + "%";
+    }
+    else{
+      element.parentNode.getElementsByTagName("h3")[0].innerHTML = "$" + parseInt(event.target.value).toLocaleString();
+    }
+  });
+});
+
+Array.prototype.forEach.call(document.getElementsByTagName("select"), (element) => {
+  element.addEventListener("input", () => {
+    element.parentNode.parentNode.querySelector(".navFor").style.visibility = "visible";
+    element.parentNode.parentNode.querySelector(".navFor").disabled = false;
+  });
+});

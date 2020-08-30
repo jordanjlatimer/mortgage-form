@@ -66,7 +66,7 @@ h1{
 form{
   position: relative;
   display: flex;
-  min-height: 80%;
+  height: fit-content;
 }
 
 h2{
@@ -78,7 +78,7 @@ h2{
   align-self: center;
 }
 
-form > div:nth-of-type(1){
+form > div:nth-of-type(19){
   opacity: 1;
   display: flex;
 }
@@ -89,7 +89,6 @@ form > div{
   position: absolute;
   top: 0px;
   width: 100%;
-  min-height: 500px;
   background-color: white;
   flex-wrap: wrap;
   justify-content: center;
@@ -124,6 +123,7 @@ form > div > div:first-of-type{
 
 .navFor{
   display: block;
+  visibility: hidden;
   height: 40px;
   width: 40px;
   margin-left: auto;
@@ -140,20 +140,62 @@ form > div > div:first-of-type{
   transform: rotate(180deg);
 }
 
+.submit{
+  display: block;
+  height: 40px;
+  width: 80px;
+  margin-left: auto;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, .5);
+  align-self: center;
+  cursor: pointer;
+  color: #00aeef;
+}
+
 form > div > div:nth-of-type(2){
   display: flex;
   flex-wrap: wrap;
   flex-basis: 100%;
   justify-content: center;
   padding: 30px;
+  height: fit-content;
 }
 
-.submit{
-  height: 40px;
-  width: 80px;
-  background-color: #52BE80;
-  border-radius: 8px;
-  cursor: pointer;
+form > div > div:nth-of-type(2) > div{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  align-content: center;
+  height: fit-content;
+}
+
+form > div > div:nth-of-type(2) > div:nth-of-type(1){
+  flex-grow: 1;
+}
+
+label{
+  color: #00aeef;
+  display: block;
+  padding: 10px
+}
+
+form > div > div:nth-of-type(2) > h3{
+  font-size: 35px;
+  color: #00749e;
+}
+
+form > div > div:nth-of-type(2) > div > p:nth-of-type(1){
+  flex-grow: 1;
+  margin: 0px 30px;
+  color: #00749e;
+  font-size: 25px;
+}
+
+form > div > div:nth-of-type(2) > div > p:nth-of-type(2){
+  margin: 0px 30px;
+  color: #00749e;
+  font-size: 25px;
 }
 
 input[type="radio"] {
@@ -214,22 +256,87 @@ input[type=range]{
   -webkit-appearance: none;
   background: transparent;
   width: 100%;
-  padding: 20px;
+  padding: 30px;
 }
 
 input[type=range]::-webkit-slider-thumb{
   -webkit-appearance: none;
-  margin-top: -10px;
-  height: 30px;
-  width: 20px;
-  border-radius: 3px;
-  background: #101f30;
+  margin-top: -20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #0088b9;
 }
 
 input[type=range]::-webkit-slider-runnable-track{
   height: 10px;
   width: 100%;
-  background: #2d7a63;
+  background: #00aeef;
   border-radius: 3px;
+}
+
+select{
+  background-color: #00aeef;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  border-radius: 2px;
+  width: 250px;
+  height: 40px;
+  font-size: 18px;
+  text-indent: 10px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, .5);
+}
+
+input[type=number]{
+  background-color: #00aeef;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  border-radius: 2px;
+  width: 250px;
+  height: 40px;
+  font-size: 18px;
+  text-indent: 10px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, .5);
+}
+
+input[type=text]{
+  background-color: #00aeef;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  border-radius: 2px;
+  width: 250px;
+  height: 40px;
+  font-size: 18px;
+  text-indent: 10px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, .5);
+}
+
+input[type=tel]{
+  background-color: #00aeef;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  border-radius: 2px;
+  width: 250px;
+  height: 40px;
+  font-size: 18px;
+  text-indent: 10px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, .5);
+}
+
+input[type=email]{
+  background-color: #00aeef;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  border-radius: 2px;
+  width: 250px;
+  height: 40px;
+  font-size: 18px;
+  text-indent: 10px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, .5);
 }
 
